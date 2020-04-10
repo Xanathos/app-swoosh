@@ -45,6 +45,9 @@
                                 <state key="normal" title="GET STARTED">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="KJb-jj-aeC" kind="show" id="R6W-5d-Shu"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="DIe-aJ-6bt">
                                 <rect key="frame" x="147.5" y="54" width="119" height="60"/>
@@ -91,7 +94,7 @@
         <!--View Controller-->
         <scene sceneID="4TH-f7-iLA">
             <objects>
-                <viewController id="KJb-jj-aeC" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="KJb-jj-aeC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mP9-pa-CTb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,12 +161,25 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDc-Dx-8qP">
+                                <rect key="frame" x="20" y="30" width="44" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="4zG-CC-yX3"/>
+                                    <constraint firstAttribute="height" constant="33" id="wPd-ZA-Jtg"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="PdT-XA-NL9" kind="unwind" unwindAction="unwindFromskillVCWithUnwindSegue:" id="rCZ-yv-ln4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="UDc-Dx-8qP" firstAttribute="leading" secondItem="NTZ-nU-DHW" secondAttribute="leading" constant="20" id="1a4-y9-hgA"/>
                             <constraint firstItem="VsF-cS-Gg5" firstAttribute="top" secondItem="mP9-pa-CTb" secondAttribute="top" id="6cE-oQ-GyJ"/>
                             <constraint firstItem="NTZ-nU-DHW" firstAttribute="trailing" secondItem="5fY-dq-Wr9" secondAttribute="trailing" constant="20" id="7du-Gv-Dfd"/>
                             <constraint firstAttribute="bottom" secondItem="VsF-cS-Gg5" secondAttribute="bottom" id="Axj-rs-UPz"/>
+                            <constraint firstItem="UDc-Dx-8qP" firstAttribute="top" secondItem="mP9-pa-CTb" secondAttribute="top" constant="30" id="Dp1-Wg-NOT"/>
                             <constraint firstItem="NTZ-nU-DHW" firstAttribute="bottom" secondItem="uOb-Ye-G1f" secondAttribute="bottom" constant="20" id="Q1w-9o-hVv"/>
                             <constraint firstItem="VsF-cS-Gg5" firstAttribute="leading" secondItem="NTZ-nU-DHW" secondAttribute="leading" id="UVo-rs-vT1"/>
                             <constraint firstItem="NTZ-nU-DHW" firstAttribute="trailing" secondItem="uOb-Ye-G1f" secondAttribute="trailing" constant="20" id="bHu-KU-dQa"/>
@@ -177,8 +193,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NTZ-nU-DHW"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9yr-GX-5yg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkV-1l-Se6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="PdT-XA-NL9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="136.60714285714286"/>
         </scene>
@@ -268,6 +286,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="29" height="24"/>
         <image name="beginnerBallerBG" width="414" height="736"/>
         <image name="desiredLeagueBG" width="414" height="736"/>
         <image name="swooshLogo" width="119" height="20"/>
