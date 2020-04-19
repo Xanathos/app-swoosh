@@ -2,15 +2,15 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="4TH-f7-iLA">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="KJb-jj-aeC" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="KJb-jj-aeC" customClass="LeagueVC" customModule="app_swoosh2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mP9-pa-CTb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +111,9 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNextTapped:" destination="KJb-jj-aeC" eventType="touchUpInside" id="URt-Fj-LPL"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="5fY-dq-Wr9">
                                 <rect key="frame" x="20" y="64" width="374" height="72"/>
@@ -194,16 +197,19 @@
                         <viewLayoutGuide key="safeArea" id="NTZ-nU-DHW"/>
                     </view>
                     <navigationItem key="navigationItem" id="9yr-GX-5yg"/>
+                    <connections>
+                        <segue destination="bkH-Kd-Kem" kind="show" identifier="skillVCSegue" id="5vn-r3-oUx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkV-1l-Se6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="PdT-XA-NL9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="136.60714285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="bqQ-aD-KH2">
             <objects>
-                <viewController id="bkH-Kd-Kem" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="bkH-Kd-Kem" customClass="SkillVC" customModule="app_swoosh2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CKm-AC-b4N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,6 +285,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EPD-P6-YoX"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vle-VU-qbv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KF-Qa-fPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
